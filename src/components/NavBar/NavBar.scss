@@ -1,0 +1,10 @@
+.ug-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  background-color: tomato;
+
+  .ug-navbar__icon {
+    width: 48px;
+  }
+}
