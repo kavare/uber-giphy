@@ -1,12 +1,19 @@
 import React from 'react';
 import './SearchBar.scss';
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+  const {
+    keywords,
+    updateKeywords,
+  } = props;
+
   return (
-    <div class="ug-searchbar">
+    <div className="ug-searchbar">
       <input
-        class="ug-searchbar__input"
+        className="ug-searchbar__input"
         type="text"
+        value={keywords}
+        onChange={updateKeywords}
       />
     </div>
   )

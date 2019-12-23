@@ -3,7 +3,7 @@ import './Layout.scss';
 
 const Layout = ({children}) => {
   return (
-    <section class="ug-layout-wrapper">
+    <section className="ug-layout-wrapper">
       {children}
     </section>
   )

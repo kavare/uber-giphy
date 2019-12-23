@@ -1,5 +1,16 @@
 .ug-list {
+  display: flex;
+  width: 50%;
+  margin: 0 auto;
   padding-left: 0;
   list-style: none;
   background-color: yellowgreen;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .ug-list__item {
+    flex: 1 0 100%;
+    text-align: center;
+  }
 }

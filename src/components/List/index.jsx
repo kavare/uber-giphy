@@ -1,10 +1,15 @@
 import React from 'react';
 import './List.scss';
+import ImageBox from '../ImageBox';
 
-const List = ({children}) => {
+const List = ({children, items}) => {
   return (
-    <ul class="ug-list">
-      {children ? children : <h2>List</h2>}
+    <ul className="ug-list">
+      {
+        (items && items.length) ? items.map(datum => (
+          <li className="ug-list__item"><ImageBox data={datum}/></li>
+        )) : null
+      }
     </ul>
   )
 }
