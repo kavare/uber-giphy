@@ -19,8 +19,9 @@ import {
 
 function App() {
   const [keywords, setKeywords] = useState('');
-  const [results, setQuery] = useInfiniteScroll(getSearchResults);
-  const debouncedKeywords = useDebounce(keywords, 300);
+  const [isPristine, setIsPristine] = useState(true);
+  const [results, isLoading, setQuery] = useInfiniteScroll(getSearchResults);
+  const debouncedKeywords = useDebounce(keywords, 500);
   const search = useCallback(setQuery);
 
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
   const updateKeywords = (e) => {
     let keywords = e.target.value;
     setKeywords(keywords);
+    setIsPristine(false);
   }
 
   return (
@@ -43,12 +45,17 @@ function App() {
           alt="Uber Giphy"
         />
         <SearchBar
+          className="ug-navbar__search"
           keywords={keywords}
           updateKeywords={updateKeywords}
         />
       </NavBar>
       <Layout>
-        { results.length ? <List items={results}/> : null }
+        <List
+          items={results}
+          isPristine={isPristine}
+          isLoading={isLoading}
+        />
       </Layout>
     </div>
   );

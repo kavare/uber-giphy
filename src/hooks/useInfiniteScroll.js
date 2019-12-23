@@ -38,7 +38,7 @@ const useInfiniteScroll = (fetchData) => {
   }, [isLoading, loadMore])
 
 
-  return [results, setQuery];
+  return [results, isLoading, setQuery];
 };
 
 export default useInfiniteScroll;

@@ -1,16 +1,36 @@
+@import '../../config/_variables';
+
 .ug-list {
   display: flex;
-  width: 50%;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: $ug-single-column-width;
   margin: 0 auto;
   padding-left: 0;
   list-style: none;
-  background-color: yellowgreen;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+
+  &--is-pristine,
+  &--is-loading,
+  &--no-results {
+    max-width: none;
+    width: 100vw;
+    height: calc(100vh - #{$ug-navbar-height});
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 5em;
+    font-weight: bold;
+    background-color: $ug-primary-color-dark;
+  }
 
   .ug-list__item {
-    flex: 1 0 100%;
-    text-align: center;
+    width: 100%;
+    margin: $ug-margin 0;
+
+    &--is-pristine { color: $ug-font-color-light; }
+    &--is-loading { color: $ug-secondary-color; }
+    &--no-results { color: $ug-accent-color; }
   }
 }

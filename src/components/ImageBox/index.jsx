@@ -3,7 +3,11 @@ import './ImageBox.scss';
 
 const ImageBox = ({children, data}) => {
   return (
-    <img src={data.images.original.webp} alt={data.title}/>
+    <img
+      className="ug-image-box"
+      src={data.images.fixed_width.webp}
+      alt={data.title}
+    />
   )
 }
 

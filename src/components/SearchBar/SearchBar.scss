@@ -1,6 +1,32 @@
+ @import '../../config/_variables';
+
 .ug-searchbar {
+  padding: $ug-padding;
 
   .ug-searchbar__input {
+    width: 100%;
+    height: 36px;
+    text-indent: 1em;
+    border: 0;
+    border-radius: 6px;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: $ug-primary-color;
+    color: $ug-accent-color;
+    outline: 0;
+    transition: all .2s ease-in;
 
+    &:focus {
+      background-color: $ug-primary-color-light;
+      color: $ug-font-color-dark;
+
+      &::placeholder {
+        color: $ug-font-color;
+      }
+    }
+
+    &::placeholder {
+      color: $ug-font-color-light;
+    }
   }
 }

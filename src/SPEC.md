@@ -15,8 +15,8 @@ a README.
 - [x] Integrate Giphy API
 - [x] Implement search feature
 - [x] Implement infinite scroll feature
-- [ ] Update search results UI
-- [ ] Update navbar UI
+- [x] Update search results UI
+- [x] Update navbar UI
 - [ ] Improve test coverage for UI components
 - [ ] Improve test coverage for hooks/utils
 - [ ] Implement 3 columns transition

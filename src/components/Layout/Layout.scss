@@ -1,3 +1,5 @@
-.ug-layout-wrapper {
+@import '../../config/_variables';
 
+.ug-layout-wrapper {
+  padding-top: $ug-navbar-height;
 }
