@@ -8,26 +8,37 @@ import {
   List,
   SearchBar
 } from './components';
+
 import {
   buildSearchUrl,
 } from './utils';
 
+import {
+  useDebounce,
+} from './hooks';
+
 function App() {
   const [keywords, setKeywords] = useState('');
-  const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+  const debouncedKeywords = useDebounce(keywords, 300);
 
-  useEffect(() => {
-    const url = buildSearchUrl({q: keywords});
+  useEffect((prev) => {
+    if (debouncedKeywords === undefined) return;
+    setIsLoading(true);
+
+    const url = buildSearchUrl({q: debouncedKeywords});
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        setItems(data.data);
+        setSearchResults(data.data);
+        setIsLoading(false);
       })
       .catch(err => {
         console.log(err);
         return [];
       })
-  }, [keywords]);
+  }, [debouncedKeywords]);
 
   const updateKeywords = (e) => {
     let keywords = e.target.value;
@@ -48,7 +59,8 @@ function App() {
         />
       </NavBar>
       <Layout>
-        <List items={items}/>
+        { isLoading ? <h2>Loading Giffy</h2> : null }
+        { searchResults.length ? <List items={searchResults}/> : null }
       </Layout>
     </div>
   );
