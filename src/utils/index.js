@@ -1,20 +1,10 @@
-import {
-  GIPHY_URL,
-  API_KEY,
-  DEFAULT_QUERY,
-} from '../config.js';
+import buildSearchUrl from './build-search-url';
+import isAtBottom from './is-at-bottom';
+import getSearchResults from './get-search-results';
 
-const buildSearchUrl = (options) => {
-  let url = `${GIPHY_URL}?api_key=${API_KEY}`;
-  let query = Object.assign({}, DEFAULT_QUERY, options);
-
-  for (let [k, v] of Object.entries(query)) {
-    url += `&${k}=${v}`;
-  }
-
-  return url;
-}
 
 export {
   buildSearchUrl,
+  isAtBottom,
+  getSearchResults,
 }

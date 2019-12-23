@@ -1,7 +1,6 @@
-import React, {useState, useEffect, useReducer} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.scss';
 import logo from './logo.svg';
-import mock from './data.json';
 import {
   NavBar,
   Layout,
@@ -10,35 +9,25 @@ import {
 } from './components';
 
 import {
-  buildSearchUrl,
+  getSearchResults,
 } from './utils';
 
 import {
   useDebounce,
+  useInfiniteScroll,
 } from './hooks';
 
 function App() {
   const [keywords, setKeywords] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [searchResults, setSearchResults] = useState([]);
+  const [results, setQuery] = useInfiniteScroll(getSearchResults);
   const debouncedKeywords = useDebounce(keywords, 300);
+  const search = useCallback(setQuery);
 
-  useEffect((prev) => {
+  useEffect(() => {
     if (debouncedKeywords === undefined) return;
-    setIsLoading(true);
+    search(debouncedKeywords);
+  }, [debouncedKeywords, search]);
 
-    const url = buildSearchUrl({q: debouncedKeywords});
-    fetch(url)
-      .then(res => res.json())
-      .then(data => {
-        setSearchResults(data.data);
-        setIsLoading(false);
-      })
-      .catch(err => {
-        console.log(err);
-        return [];
-      })
-  }, [debouncedKeywords]);
 
   const updateKeywords = (e) => {
     let keywords = e.target.value;
@@ -59,8 +48,7 @@ function App() {
         />
       </NavBar>
       <Layout>
-        { isLoading ? <h2>Loading Giffy</h2> : null }
-        { searchResults.length ? <List items={searchResults}/> : null }
+        { results.length ? <List items={results}/> : null }
       </Layout>
     </div>
   );
