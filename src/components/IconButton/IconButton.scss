@@ -15,3 +15,17 @@
     background-color: $ug-accent-color;
   }
 }
+
+@include tablet {
+  .ug-icon-button {
+    padding: 3px;
+    margin: 3px;
+  }
+}
+
+@include mobile {
+  .ug-icon-button {
+    padding: 3px;
+    margin: 3px;
+  }
+}

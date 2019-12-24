@@ -19,3 +19,19 @@
     flex: 1 1 auto;
   }
 }
+
+@include tablet {
+  .ug-navbar {
+    .ug-navbar__icon {
+      width: 48px;
+    }
+  }
+}
+
+@include mobile {
+  .ug-navbar {
+    .ug-navbar__icon {
+      width: 48px;
+    }
+  }
+}

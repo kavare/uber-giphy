@@ -21,6 +21,7 @@ a README.
 - [x] Improve test coverage for utils
 - [x] Adding integration test on App
 - [x] Implement 3 columns transition
+- [x] Adding Responsiveness
 - [ ] Update Readme doc
 
 ## Actions

@@ -2,7 +2,7 @@
 
 .ug-image-box {
   width: 100%;
-  min-height: 60px;
+  height: 100%;
   background: linear-gradient(45deg, $ug-primary-color-dark, $ug-primary-color);
 
   .ug-image-box__title {
@@ -13,7 +13,8 @@
   }
 
   .ug-image-box__img {
-    display: block;
     width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

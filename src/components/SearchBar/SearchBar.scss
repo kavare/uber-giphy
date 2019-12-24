@@ -30,3 +30,27 @@
     }
   }
 }
+
+@include tablet {
+  .ug-searchbar {
+    padding: $ug-padding / 2;
+
+    .ug-searchbar__input {
+      height: 30px;
+      font-size: 1.2em;
+      text-indent: 0.2em;
+    }
+  }
+}
+
+@include mobile {
+  .ug-searchbar {
+    padding: $ug-padding / 2;
+
+    .ug-searchbar__input {
+      height: 30px;
+      font-size: 1.2em;
+      text-indent: 0.2em;
+    }
+  }
+}

@@ -2,9 +2,8 @@ import React from 'react';
 import './ImageBox.scss';
 
 const ImageBox = ({data, columns}) => {
-  const imgUrl = (columns === 3)
-    ? data.images.fixed_height.webp
-    : data.images.fixed_width.webp
+  const img = data.images.fixed_width.url;
+  const webp = data.images.fixed_width.webp;
 
   return (
     <div
@@ -12,11 +11,14 @@ const ImageBox = ({data, columns}) => {
       data-testid="ug-image-box"
     >
       <h5 className="ug-image-box__title">{data.title}</h5>
-      <img
-        className="ug-image-box__img"
-        src={imgUrl}
-        alt={data.title}
-      />
+      <picture>
+        <source type="image/webp" srcset={webp} />
+        <img
+          className="ug-image-box__img"
+          src={img}
+          alt={data.title}
+        />
+      </picture>
     </div>
   )
 }
