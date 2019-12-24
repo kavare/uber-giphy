@@ -3,7 +3,7 @@ import './NavBar.scss';
 
 const NavBar = ({children}) => {
   return (
-    <header className="ug-navbar">
+    <header className="ug-navbar" data-testid="ug-navbar">
       {children}
     </header>
   )

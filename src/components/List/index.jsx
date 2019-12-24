@@ -2,14 +2,16 @@ import React from 'react';
 import './List.scss';
 import ImageBox from '../ImageBox';
 
-const List = ({columns, items, isPristine, isLoading}) => {
+const List = ({columns = 1, items = [], isPristine = true, isLoading = false}) => {
   const hasResults = !!items.length;
   return (
     <ul className={`
-      ug-list
-      ${columns === 3 ? 'ug-list--three-column' : 'ug-list--single-column'}
-      ${hasResults ? '' : 'ug-list--no-results' }
-     `}>
+        ug-list
+        ${columns === 3 ? 'ug-list--three-column' : 'ug-list--single-column'}
+        ${hasResults ? '' : 'ug-list--no-results' }
+     `}
+      data-testid="ug-list"
+    >
       {
         hasResults
           ? items.map(datum => (
