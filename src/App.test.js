@@ -1,6 +1,13 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import App from './App';
+
+afterEach(cleanup);
+
+test('should matches snapshot', () => {
+  const { asFragment } = render(<App />);
+  expect(asFragment()).toMatchSnapshot();
+});
 
 test('should render with default title with Navbar and List components', () => {
   const { getByText, getByTestId } = render(<App />);

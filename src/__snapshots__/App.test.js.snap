@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ug-app"
+  >
+    <header
+      class="ug-navbar"
+      data-testid="ug-navbar"
+    >
+      <img
+        alt="Uber Giphy"
+        class="ug-navbar__icon"
+        src="logo.svg"
+        title="Click to resume to initial state"
+      />
+      <div
+        class="ug-searchbar ug-navbar__search"
+        data-testid="ug-searchbar"
+      >
+        <input
+          class="ug-searchbar__input"
+          data-testid="ug-searchbar__input"
+          placeholder="Search Giphy..."
+          type="text"
+          value=""
+        />
+      </div>
+      <img
+        alt="Single Column Layout"
+        class="ug-icon-button ug-icon-button--is-active"
+        data-testid="ug-icon-button"
+        src="single-column.svg"
+      />
+      <img
+        alt="Three Columns Layout"
+        class="ug-icon-button "
+        data-testid="ug-icon-button"
+        src="three-columns.svg"
+      />
+    </header>
+    <section
+      class="ug-layout"
+      data-testid="ug-layout"
+    >
+      <ul
+        class="
+        ug-list
+        ug-list--single-column
+        ug-list--no-results
+     "
+        data-testid="ug-list"
+      >
+        <h2
+          class="ug-list__item--is-pristine"
+        >
+          Uber Giphy :) 
+          <span
+            class="ug-list__item-footnote"
+          >
+            by kavare
+          </span>
+        </h2>
+      </ul>
+    </section>
+  </div>
+</DocumentFragment>
+`;

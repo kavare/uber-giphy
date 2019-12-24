@@ -9,9 +9,13 @@ const SearchBar = (props) => {
   } = props;
 
   return (
-    <div className={`ug-searchbar ${className}`}>
+    <div
+      className={`ug-searchbar ${className}`}
+      data-testid="ug-searchbar"
+    >
       <input
         className="ug-searchbar__input"
+        data-testid="ug-searchbar__input"
         type="text"
         value={keywords}
         placeholder="Search Giphy..."

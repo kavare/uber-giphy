@@ -7,7 +7,10 @@ const ImageBox = ({data, columns}) => {
     : data.images.fixed_width.webp
 
   return (
-    <div className="ug-image-box">
+    <div
+      className="ug-image-box"
+      data-testid="ug-image-box"
+    >
       <h5 className="ug-image-box__title">{data.title}</h5>
       <img
         className="ug-image-box__img"
