@@ -32,4 +32,3 @@ test('should receive passed in keywords and able to be changed', () => {
   expect(searchBarInput.value).toBe('dog');
   expect(updateKeywords).toHaveBeenCalledTimes(1);
 })
-

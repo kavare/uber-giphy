@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useLayoutEffect } from 'react';
 import { isAtBottom } from '../utils';
 
 const useInfiniteScroll = (fetchData) => {
@@ -16,15 +16,17 @@ const useInfiniteScroll = (fetchData) => {
     setIsLoading(true);
   }, [isLoading]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [handleScroll])
 
   useEffect(() => {
+    // [NOTE] Prevent request in initial state or reset to empty string
+    let shouldLoad = !!query.length;
     setPagination({count: 0, total: 0, offset: 0});
     setResults([]);
-    setIsLoading(true);
+    setIsLoading(shouldLoad);
   }, [query])
 
 
@@ -36,7 +38,15 @@ const useInfiniteScroll = (fetchData) => {
         setResults(results => [...results, ...data]);
         setIsLoading(false);
       })
-  }, [isLoading, loadMore])
+      .catch(err => {
+        console.log('maybe here?');
+        setPagination({count: 0, total: 0, offset: 0});
+        setResults([]);
+        setIsLoading(false);
+        return [];
+      })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoading])
 
 
   return [results, isLoading, setQuery];

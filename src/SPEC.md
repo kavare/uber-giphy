@@ -17,8 +17,9 @@ a README.
 - [x] Implement infinite scroll feature
 - [x] Update search results UI
 - [x] Update navbar UI
-- [ ] Improve test coverage for UI components
-- [ ] Improve test coverage for hooks/utils
+- [x] Improve test coverage for UI components
+- [x] Improve test coverage for utils
+- [x] Adding integration test on App
 - [x] Implement 3 columns transition
 - [ ] Update Readme doc
 

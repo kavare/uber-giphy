@@ -4,7 +4,7 @@ import {
   DEFAULT_QUERY,
 } from '../config/config.js';
 
-const buildSearchUrl = (options) => {
+const buildSearchUrl = (options = {}) => {
   // [NOTE] GIPHY API Signature:
   // q=kittens&limit=5&offset=0&rating=G&lang=en
   let url = `${GIPHY_URL}?api_key=${API_KEY}`;

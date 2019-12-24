@@ -15,7 +15,7 @@ const List = ({columns = 1, items = [], isPristine = true, isLoading = false}) =
       {
         hasResults
           ? items.map(datum => (
-            <li className="ug-list__item" key={datum.id}><ImageBox data={datum} columns={columns} /></li>
+            <li className="ug-list__item" key={datum.id}><ImageBox key={datum.id} data={datum} columns={columns} /></li>
           ))
           : isPristine
             ? <h2 className="ug-list__item--is-pristine">Uber Giphy :) <span className="ug-list__item-footnote">by kavare</span></h2>

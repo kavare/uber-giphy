@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "gh-pages": "^2.1.1",
+    "jest-fetch-mock": "^3.0.0",
     "sass": "^1.24.0"
   }
 }
