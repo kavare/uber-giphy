@@ -33,4 +33,21 @@
     &--is-loading { color: $ug-secondary-color; }
     &--no-results { color: $ug-accent-color; }
   }
+
+  &--three-column {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    grid-auto-rows: 200px;
+    max-width: none;
+
+    .ug-list__item {
+      &--is-pristine,
+      &--is-loading,
+      &--no-results {
+        grid-column-start: span 3;
+        grid-row-start: none;
+      }
+    }
+  }
 }

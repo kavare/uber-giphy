@@ -19,7 +19,7 @@ a README.
 - [x] Update navbar UI
 - [ ] Improve test coverage for UI components
 - [ ] Improve test coverage for hooks/utils
-- [ ] Implement 3 columns transition
+- [x] Implement 3 columns transition
 - [ ] Update Readme doc
 
 ## Actions

@@ -22,6 +22,7 @@ const useInfiniteScroll = (fetchData) => {
   }, [handleScroll])
 
   useEffect(() => {
+    setPagination({count: 0, total: 0, offset: 0});
     setResults([]);
     setIsLoading(true);
   }, [query])
