@@ -1,0 +1,17 @@
+@import '../../config/_variables';
+
+.ug-icon-button {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  margin: 0 8px;
+  cursor: pointer;
+  background-color: $ug-primary-color;
+  border-radius: 8px;
+  transition: background-color .2s ease-in;
+
+  &:hover,
+  &--is-active {
+    background-color: $ug-accent-color;
+  }
+}

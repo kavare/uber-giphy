@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.scss';
-import logo from './logo.svg';
-import iconSingleColumn from './single-column.svg';
-import iconThreeColumns from './three-columns.svg';
+import logo from './config/logo.svg';
+import iconSingleColumn from './config/single-column.svg';
+import iconThreeColumns from './config/three-columns.svg';
 
 import {
   NavBar,

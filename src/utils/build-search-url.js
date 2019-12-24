@@ -2,7 +2,7 @@ import {
   GIPHY_URL,
   API_KEY,
   DEFAULT_QUERY,
-} from '../config.js';
+} from '../config/config.js';
 
 const buildSearchUrl = (options) => {
   // [NOTE] GIPHY API Signature:
