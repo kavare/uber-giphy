@@ -16,10 +16,10 @@ const List = ({columns, items, isPristine, isLoading}) => {
             <li className="ug-list__item" key={datum.id}><ImageBox data={datum} columns={columns} /></li>
           ))
           : isPristine
-            ? <h2 className="ug-list__item--is-pristine">Welcome to Uber Giphy :)</h2>
+            ? <h2 className="ug-list__item--is-pristine">Uber Giphy :) <span className="ug-list__item-footnote">by kavare</span></h2>
             : isLoading
               ? <h2 className="ug-list__item--is-loading">Loading......</h2>
-              : <h2 className="ug-list__item--no-results">There is no results here, try new keywords :)</h2>
+              : <h2 className="ug-list__item--no-results">No results here :( How about trying new keywords?</h2>
       }
     </ul>
   )

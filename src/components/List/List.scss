@@ -34,6 +34,12 @@
     &--no-results { color: $ug-accent-color; }
   }
 
+  .ug-list__item-footnote {
+    font-size: 0.6em;
+    font-family: monospace;
+    color: $ug-secondary-color;
+  }
+
   &--three-column {
     display: grid;
     grid-gap: 10px;

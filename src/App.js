@@ -41,6 +41,11 @@ function App() {
     setIsPristine(false);
   }
 
+  const backToHome = (e) => {
+    setKeywords('');
+    setIsPristine(true);
+  }
+
   return (
     <div className="ug-app">
       <NavBar>
@@ -48,6 +53,8 @@ function App() {
           className="ug-navbar__icon"
           src={logo}
           alt="Uber Giphy"
+          title="Click to resume to initial state"
+          onClick={backToHome}
         />
         <SearchBar
           className="ug-navbar__search"
