@@ -64,18 +64,26 @@ function App() {
           keywords={keywords}
           updateKeywords={updateKeywords}
         />
-        <IconButton
-          className={columns === 1 ? 'ug-icon-button--is-active' : ''}
-          img={iconSingleColumn}
-          text="Single Column Layout"
-          onClick={() => setColumns(1)}
-        />
-        <IconButton
-          className={columns === 3 ? 'ug-icon-button--is-active' : ''}
-          img={iconThreeColumns}
-          text="Three Columns Layout"
-          onClick={() => setColumns(3)}
-        />
+        <div className="ug-navbar__button-group">
+          <IconButton
+            className={`
+              ug-navbar__button
+              ${columns === 1 ? 'ug-icon-button--is-active' : ''}
+            `}
+            img={iconSingleColumn}
+            text="Single Column Layout"
+            onClick={() => setColumns(1)}
+          />
+          <IconButton
+            className={`
+              ug-navbar__button
+              ${columns === 3 ? 'ug-icon-button--is-active' : ''}
+            `}
+            img={iconThreeColumns}
+            text="Three Columns Layout"
+            onClick={() => setColumns(3)}
+          />
+        </div>
       </NavBar>
       <Layout>
         { hasError &&

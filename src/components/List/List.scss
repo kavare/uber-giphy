@@ -59,6 +59,7 @@
     max-width: none;
     width: 100vw;
     height: calc(100vh - #{$ug-navbar-height});
+    max-height: -webkit-fill-available;
     text-align: center;
     text-transform: uppercase;
     font-size: 5em;

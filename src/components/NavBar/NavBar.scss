@@ -18,12 +18,27 @@
   .ug-navbar__search {
     flex: 1 1 auto;
   }
+
+  .ug-navbar__button-group {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-around;
+
+    .ug-navbar__button {
+      flex: 0 1 auto;
+    }
+  }
 }
 
 @include tablet {
   .ug-navbar {
     .ug-navbar__icon {
       width: 48px;
+    }
+
+    .ug-navbar__button-group {
+      margin-left: $ug-margin;
     }
   }
 }
@@ -32,6 +47,10 @@
   .ug-navbar {
     .ug-navbar__icon {
       width: 48px;
+    }
+
+    .ug-navbar__button-group {
+      margin-left: $ug-margin;
     }
   }
 }

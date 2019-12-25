@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should matches snapshot 1`] = `
+exports[`App Integration Test should matches snapshot 1`] = `
 <DocumentFragment>
   <div
     class="ug-app"
@@ -27,18 +27,28 @@ exports[`should matches snapshot 1`] = `
           value=""
         />
       </div>
-      <img
-        alt="Single Column Layout"
-        class="ug-icon-button ug-icon-button--is-active"
-        data-testid="ug-icon-button"
-        src="single-column.svg"
-      />
-      <img
-        alt="Three Columns Layout"
-        class="ug-icon-button "
-        data-testid="ug-icon-button"
-        src="three-columns.svg"
-      />
+      <div
+        class="ug-navbar__button-group"
+      >
+        <img
+          alt="Single Column Layout"
+          class="ug-icon-button 
+              ug-navbar__button
+              ug-icon-button--is-active
+            "
+          data-testid="ug-icon-button"
+          src="single-column.svg"
+        />
+        <img
+          alt="Three Columns Layout"
+          class="ug-icon-button 
+              ug-navbar__button
+              
+            "
+          data-testid="ug-icon-button"
+          src="three-columns.svg"
+        />
+      </div>
     </header>
     <section
       class="ug-layout"

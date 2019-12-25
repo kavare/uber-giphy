@@ -3,8 +3,8 @@
 .ug-icon-button {
   width: 30px;
   height: 30px;
+  margin: 6px;
   padding: 6px;
-  margin: 0 8px;
   cursor: pointer;
   background-color: $ug-primary-color;
   border-radius: 8px;
@@ -18,14 +18,14 @@
 
 @include tablet {
   .ug-icon-button {
-    padding: 3px;
+    padding: 4px;
     margin: 3px;
   }
 }
 
 @include mobile {
   .ug-icon-button {
-    padding: 3px;
+    padding: 4px;
     margin: 3px;
   }
 }

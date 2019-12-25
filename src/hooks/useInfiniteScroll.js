@@ -13,9 +13,9 @@ const useInfiniteScroll = (fetchData) => {
   }, [query, pagination, fetchData]);
 
   const handleScroll = useCallback(() => {
-    if (isLoading || !isAtBottom()) return;
+    if (isLoading || !isAtBottom() || results.length === 0) return;
     setIsLoading(true);
-  }, [isLoading]);
+  }, [isLoading, results]);
 
   useLayoutEffect(() => {
     window.addEventListener('scroll', handleScroll);
