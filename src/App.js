@@ -43,7 +43,7 @@ function App() {
 
   const backToHome = (e) => {
     setKeywords('');
-    setIsPristine(true);
+    setTimeout(() => setIsPristine(true), 1000)
   }
 
   return (

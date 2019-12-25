@@ -23,8 +23,8 @@
   }
 
   &--is-pristine,
-  &--is-loading,
   &--no-results {
+    display: flex;
     max-width: none;
     width: 100vw;
     height: calc(100vh - #{$ug-navbar-height});
@@ -35,18 +35,12 @@
     background-color: $ug-primary-color-dark;
   }
 
-  &--is-pristine,
-  &--no-results {
-    display: flex;
-  }
-
   .ug-list__item {
     width: 100%;
     height: 100%;
     margin: $ug-margin 0;
 
     &--is-pristine,
-    &--is-loading,
     &--no-results {
       display: flex;
       flex-direction: column;

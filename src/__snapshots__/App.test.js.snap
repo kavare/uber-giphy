@@ -65,7 +65,13 @@ exports[`should matches snapshot 1`] = `
           <h4
             class="ug-list__item-subtitle"
           >
-            crafted by kavare 😊
+            crafted by kavare
+            <span
+              aria-label="love"
+              role="img"
+            >
+               😊 
+            </span>
           </h4>
         </li>
       </ul>

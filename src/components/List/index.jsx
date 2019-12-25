@@ -7,7 +7,9 @@ const List = ({columns = 1, items = [], isPristine = true, isLoading = false}) =
   const pristineMessage = (
     <li className="ug-list__item ug-list__item--is-pristine">
       <h2 className="ug-list__item-title">Uber Giphy :)</h2>
-      <h4 className="ug-list__item-subtitle">crafted by kavare 😊</h4>
+      <h4 className="ug-list__item-subtitle">crafted by kavare
+        <span role="img" aria-label="love"> 😊 </span>
+      </h4>
     </li>
   );
 
