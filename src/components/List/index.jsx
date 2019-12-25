@@ -29,14 +29,14 @@ const List = ({columns = 1, items = [], isPristine = true}) => {
       data-testid="ug-list"
     >
       {
-        hasResults
-          ? items.map(datum => (
-            <li className="ug-list__item" key={datum.id}>
-              <ImageBox key={datum.id} data={datum} columns={columns} />
-            </li>
-          ))
-          : isPristine
-            ? pristineMessage
+        isPristine
+          ? pristineMessage
+          : hasResults
+            ? items.map(datum => (
+              <li className="ug-list__item" key={datum.id}>
+                <ImageBox key={datum.id} data={datum} columns={columns} />
+              </li>
+            ))
             : noResultsMessage
       }
     </ul>

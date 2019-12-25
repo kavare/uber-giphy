@@ -12,7 +12,8 @@ body {
     width: 100%;
     margin: 0;
     padding: $ug-padding / 2;
-    font-size: 1em;
+    font-size: 1.2em;
+    font-weight: 200;
     color: $ug-font-color-light;
 
     &--is-success { background-color: $ug-success-color; }

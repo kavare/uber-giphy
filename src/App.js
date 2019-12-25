@@ -38,12 +38,15 @@ function App() {
   const updateKeywords = (e) => {
     let keywords = e.target.value;
     setKeywords(keywords);
-    setIsPristine(false);
+
+    // [NOTE] UX Improvement: prevent flashing no results screen when users start
+    //        searching from initial state
+    setTimeout(() => setIsPristine(false), 1000);
   }
 
   const backToHome = (e) => {
     setKeywords('');
-    setTimeout(() => setIsPristine(true), 1000)
+    setIsPristine(true);
   }
 
   return (
@@ -77,12 +80,12 @@ function App() {
       <Layout>
         { hasError &&
           <h4 className="ug-message ug-message--is-error">
-            You might lose the internet connection, please try again
+            <span role="img" aria-label="lost connection"> 🕵 </span>You might lose the internet connection, please try again
           </h4>
         }
         { isLoading &&
           <h4 className="ug-message ug-message--is-success">
-            Loading...
+            <span role="img" aria-label="loading"> ⏳ </span>Loading...
           </h4>
         }
         <List
