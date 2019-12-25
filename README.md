@@ -1,68 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Uber-Giphy
+A simple responsive Giphy interface for fun. Real-time infinite scroll with single/3-column layoute.
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
+## Project Setup
+### `yarn start`:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
 ### `yarn test`
-
 Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Tests including unit tests for UI components and utility functions, as well as integration tests for
+loading images from mock API.
 
 ### `yarn build`
-
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### `yarn deploy`
+Leverage on [gh-pages](https://github.com/tschaub/gh-pages) to deploy seamlessly to Github. <br />
+The working app is running under https://kavare.github.io/uber-giphy/.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
+- GIPHY image search API and shows the results in a 1-column scrollable view (like Instagram).
+- Support endless scrolling, automatically requesting and displaying more images when the user scrolls to the bottom of the view.
+- Users could enter arbitrary words to get the images from Giphy (default to G rating).
+- Users could toggle between 1-column and 3-column views.
 
-### `yarn eject`
+## Architecture
+For simplicity this project use React Hook to handle state management for the whole app. I choose Hook over Redux due to its simple use case with limited states (show below). The entry point is `index.js` under `src` folder. `App.js` serves as the root container components which holding the states and actions logic such as search, loading state, and column rearrangement. The rest of the UI components (stateless dump components) are listed under `components` folder.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+The core logic for infinite scoll is encapsulated into a custom hook under `hooks` folder. Other utility functions such as fetching data from API (get-search-result.js), building search url based on user query (build-search-url.js) and checking whether the page is reaching to the bottom (is-at-bottom.js) reside under `utils` folder.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`config` folder contains image assets, scss variables and mixins, and some global variables which could be changed overtime (e.g. baseURL to api endpoint, access token, etc).
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Most of the test cases are sitting side-by-side to the component/functions which they target for. This way it's easier to add/remove the test as the project grows.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Folder Structures
+```
+src/
+├── components/
+│   ├── IconButton/
+│   ├── ImageBox/
+│   ├── Layout/
+│   ├── List/
+│   ├── NavBar/
+│   └── SearchBar/
+├── config/
+│   ├── _variables.scss
+│   ├── config.js
+│   ├── data.json
+│   └── other image assets
+├── containers/
+├── hooks/
+│   ├── useDebounce.js
+│   └── useInfiniteScroll.js
+├── utils/
+│   ├── build-search-url.js
+│   ├── get-search-result.js
+│   └── is-at-bottom.js
+├── app.js
+└── index.js
+```
+### States
+- Initial state: show welcome message on the screen. One can return to this state by clicking on the logo on top-left corner (isPristine).
+- Loading state: show loading message on the screen. When _Load More_ action is triggered, it will transit to this state until it get results from the api service. (isLoading)
+- Display state: depending on the response, one may see a list of gif images or a message indicates that there are no results under this search terms. (hasResults)
 
-## Learn More
+### Actions
+- Search
+  - When change text in search bar
+  - When search bar revert to empty
+  - Whne search the keywords that is used before
+- Load More
+  - When scroll to bottom
+  - When keywords changed
+- Rearrange
+  - When click on layout change button
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Tech Stack
+- `create-react-app (CRA)`: a scaffolding tool for simple React project
+- `React Hook`: a new feature in React ecosystem starts from v16.8+. Allow functional components to be more "stateful" with composible hooks.
+- `React-testing-library`: the official recommended testing library which embrace integration tests over implementation details.
+- `scss`: a css pre-processor which allow nested css, shared variables, and mixins.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Future Optimization
+- [x] Debounce for user input
+- [ ] Catch for most recent 5 search results
+- [ ] Implement masonry layout in 3-column-mode
+- [ ] Encapsulate api service as a module instead of a single util function
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

@@ -1,8 +1,11 @@
 {
   "name": "uber-giphy",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": false,
   "homepage": "http://kavare.github.io/uber-giphy",
+  "description": "A simple responsive Giphy interface for fun",
+  "author": "kavare",
+  "license": "PRIVATE",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

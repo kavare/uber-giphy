@@ -12,7 +12,7 @@ const ImageBox = ({data, columns}) => {
     >
       <h5 className="ug-image-box__title">{data.title}</h5>
       <picture>
-        <source type="image/webp" srcset={webp} />
+        <source type="image/webp" srcSet={webp} />
         <img
           className="ug-image-box__img"
           src={img}
@@ -24,5 +24,3 @@ const ImageBox = ({data, columns}) => {
 }
 
 export default ImageBox;
-
-

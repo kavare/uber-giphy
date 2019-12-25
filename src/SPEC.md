@@ -22,7 +22,7 @@ a README.
 - [x] Adding integration test on App
 - [x] Implement 3 columns transition
 - [x] Adding Responsiveness
-- [ ] Update Readme doc
+- [x] Update Readme doc
 
 ## Actions
 - Search
@@ -38,6 +38,6 @@ a README.
 
 ## Optimization
 - [x] Debounce for query
-- [ ] Loading state for img src:
+- [x] Loading state for img src:
 - [ ] Animation for 1 to 3 columns transition
 - [ ] Catch for most recent 5 search results?

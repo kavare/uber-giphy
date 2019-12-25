@@ -49,19 +49,25 @@ exports[`should matches snapshot 1`] = `
         ug-list
         ug-list--single-column
         ug-list--no-results
+        
+        ug-list--is-pristine
      "
         data-testid="ug-list"
       >
-        <h2
-          class="ug-list__item--is-pristine"
+        <li
+          class="ug-list__item ug-list__item--is-pristine"
         >
-          Uber Giphy :) 
-          <span
-            class="ug-list__item-footnote"
+          <h2
+            class="ug-list__item-title"
           >
-            by kavare
-          </span>
-        </h2>
+            Uber Giphy :)
+          </h2>
+          <h4
+            class="ug-list__item-subtitle"
+          >
+            crafted by kavare 😊
+          </h4>
+        </li>
       </ul>
     </section>
   </div>
