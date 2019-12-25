@@ -30,15 +30,6 @@ test('should have show no results message when it is not pristine without result
   expect(getByText(/No results here/i)).toBeInTheDocument();
 })
 
-test('should have has loading state when trigger loading', () => {
-  const { getByText } = renderList({
-    items: [],
-    isPristine: false,
-    isLoading: true,
-  });
-  expect(getByText(/Loading/i)).toBeInTheDocument();
-})
-
 test('can show image and title when there are items passed in', () => {
   const { list, getByText, getByAltText } = renderList({
     items: mockData.data,

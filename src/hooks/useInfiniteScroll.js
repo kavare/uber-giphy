@@ -3,6 +3,7 @@ import { isAtBottom } from '../utils';
 
 const useInfiniteScroll = (fetchData) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [query, setQuery] = useState('');
   const [pagination, setPagination] = useState({count: 0, total: 0, offset: 0});
   const [results, setResults] = useState([]);
@@ -34,22 +35,23 @@ const useInfiniteScroll = (fetchData) => {
     if (!isLoading) return;
     loadMore()
       .then(({data, pagination}) => {
+        if (!Array.isArray(data)) data = [];
         setPagination(pagination);
         setResults(results => [...results, ...data]);
         setIsLoading(false);
+        setHasError(false);
       })
       .catch(err => {
-        console.log('maybe here?');
         setPagination({count: 0, total: 0, offset: 0});
         setResults([]);
         setIsLoading(false);
-        return [];
+        setHasError(true);
       })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoading])
 
 
-  return [results, isLoading, setQuery];
+  return [results, isLoading, hasError, setQuery];
 };
 
 export default useInfiniteScroll;

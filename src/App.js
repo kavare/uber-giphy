@@ -24,7 +24,7 @@ import {
 function App() {
   const [keywords, setKeywords] = useState('');
   const [isPristine, setIsPristine] = useState(true);
-  const [results, isLoading, setQuery] = useInfiniteScroll(getSearchResults);
+  const [results, isLoading, hasError, setQuery] = useInfiniteScroll(getSearchResults);
   const debouncedKeywords = useDebounce(keywords, 500);
   const search = useCallback(setQuery);
   const [columns, setColumns] = useState(1);
@@ -75,11 +75,20 @@ function App() {
         />
       </NavBar>
       <Layout>
+        { hasError &&
+          <h4 className="ug-message ug-message--is-error">
+            You might lose the internet connection, please try again
+          </h4>
+        }
+        { isLoading &&
+          <h4 className="ug-message ug-message--is-success">
+            Loading...
+          </h4>
+        }
         <List
           columns={columns}
           items={results}
           isPristine={isPristine}
-          isLoading={isLoading}
         />
       </Layout>
     </div>

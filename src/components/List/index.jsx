@@ -2,7 +2,7 @@ import React from 'react';
 import './List.scss';
 import ImageBox from '../ImageBox';
 
-const List = ({columns = 1, items = [], isPristine = true, isLoading = false}) => {
+const List = ({columns = 1, items = [], isPristine = true}) => {
   const hasResults = !!items.length;
   const pristineMessage = (
     <li className="ug-list__item ug-list__item--is-pristine">
@@ -10,12 +10,6 @@ const List = ({columns = 1, items = [], isPristine = true, isLoading = false}) =
       <h4 className="ug-list__item-subtitle">crafted by kavare
         <span role="img" aria-label="love"> 😊 </span>
       </h4>
-    </li>
-  );
-
-  const loadingMessage = (
-    <li className="ug-list__item ug-list__item--is-loading">
-      <h2 className="ug-list__item-title">Loading......</h2>
     </li>
   );
 
@@ -30,7 +24,6 @@ const List = ({columns = 1, items = [], isPristine = true, isLoading = false}) =
         ug-list
         ${columns === 3 ? 'ug-list--three-column' : 'ug-list--single-column'}
         ${hasResults ? '' : 'ug-list--no-results' }
-        ${isLoading ? 'ug-list--is-loading' : '' }
         ${isPristine ? 'ug-list--is-pristine' : '' }
      `}
       data-testid="ug-list"
@@ -44,9 +37,7 @@ const List = ({columns = 1, items = [], isPristine = true, isLoading = false}) =
           ))
           : isPristine
             ? pristineMessage
-            : isLoading
-              ? loadingMessage
-              : noResultsMessage
+            : noResultsMessage
       }
     </ul>
   )

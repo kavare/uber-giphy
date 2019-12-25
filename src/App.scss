@@ -6,4 +6,17 @@ body {
 
 .ug-app {
   width: 100vw;
+
+  .ug-message {
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: $ug-padding / 2;
+    font-size: 1em;
+    color: $ug-font-color-light;
+
+    &--is-success { background-color: $ug-success-color; }
+    &--is-warning { background-color: $ug-warning-color; }
+    &--is-error { background-color: $ug-error-color; }
+  }
 }

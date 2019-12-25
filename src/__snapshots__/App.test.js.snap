@@ -49,7 +49,6 @@ exports[`should matches snapshot 1`] = `
         ug-list
         ug-list--single-column
         ug-list--no-results
-        
         ug-list--is-pristine
      "
         data-testid="ug-list"

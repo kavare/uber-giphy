@@ -40,7 +40,7 @@ test('should load more items when scroll to bottom', async () => {
   const { getByTestId, getByText, getByAltText } = render(<App />);
   const searchInput = getByTestId('ug-searchbar__input');
   fireEvent.change(searchInput, {target: {value: 'santa'}});
-  fireEvent.scroll(window, {target: {scrollY: 2000}});
+  fireEvent.scroll(window, {target: {scrollY: 5000}});
 
   await wait(() => {
     expect(fetch.mock.calls.length).toEqual(2)

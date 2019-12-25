@@ -8,8 +8,7 @@ const getSearchResults = async (q, offset) => {
     const data = await res.json();
     return data;
   } catch (e) {
-    console.log(e);
-    return [];
+    throw Error(e);
   }
 }
 
