@@ -2,11 +2,11 @@ import React from 'react';
 import './List.scss';
 import ImageBox from '../ImageBox';
 
-const List = ({columns = 1, items = [], isPristine = true}) => {
+const List = ({columns = 1, items = [], isPristine = true, isLoading = false}) => {
   const hasResults = !!items.length;
   const pristineMessage = (
     <li className="ug-list__item ug-list__item--is-pristine">
-      <h2 className="ug-list__item-title">Uber Giphy :)</h2>
+      <h2 className="ug-list__item-title">Uber Giphy</h2>
       <h4 className="ug-list__item-subtitle">crafted by kavare
         <span role="img" aria-label="love"> 😊 </span>
       </h4>
@@ -15,7 +15,18 @@ const List = ({columns = 1, items = [], isPristine = true}) => {
 
   const noResultsMessage = (
     <li className="ug-list__item ug-list__item--no-results">
-      <h2 className="ug-list__item-title">No results here :( How about trying new keywords?</h2>
+      <h2 className="ug-list__item-title">No results here
+        <span role="img" aria-label="Try again"> 🐶 </span><br/>
+        Let's try again!!
+      </h2>
+    </li>
+  );
+
+  const isLoadingMessage = (
+    <li className="ug-list__item ug-list__item--no-results">
+      <h2 className="ug-list__item-title">Launching...
+        <span role="img" aria-label="Launching"> 🚀 </span>
+      </h2>
     </li>
   );
 
@@ -37,7 +48,9 @@ const List = ({columns = 1, items = [], isPristine = true}) => {
                 <ImageBox key={datum.id} data={datum} columns={columns} />
               </li>
             ))
-            : noResultsMessage
+            : isLoading
+              ? isLoadingMessage
+              : noResultsMessage
       }
     </ul>
   )

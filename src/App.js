@@ -92,6 +92,7 @@ function App() {
           columns={columns}
           items={results}
           isPristine={isPristine}
+          isLoading={isLoading}
         />
       </Layout>
     </div>

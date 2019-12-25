@@ -59,7 +59,7 @@ exports[`should matches snapshot 1`] = `
           <h2
             class="ug-list__item-title"
           >
-            Uber Giphy :)
+            Uber Giphy
           </h2>
           <h4
             class="ug-list__item-subtitle"
