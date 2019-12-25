@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2be26cc9b7aa04bdd4292ba1ad439e84",
+    "revision": "c1ad8f47744ebcebdd066557bd25abd7",
     "url": "/uber-giphy/index.html"
   },
   {
-    "revision": "735b4fb75bb6612cef85",
-    "url": "/uber-giphy/static/css/main.bbd10ab7.chunk.css"
+    "revision": "923977a1ba0fcb4eea65",
+    "url": "/uber-giphy/static/css/main.c952f24e.chunk.css"
   },
   {
     "revision": "e4329fd8b31efd073237",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/uber-giphy/static/js/2.1a876ad3.chunk.js.LICENSE"
   },
   {
-    "revision": "735b4fb75bb6612cef85",
-    "url": "/uber-giphy/static/js/main.9b7b6ae9.chunk.js"
+    "revision": "923977a1ba0fcb4eea65",
+    "url": "/uber-giphy/static/js/main.a7765d22.chunk.js"
   },
   {
     "revision": "10784522a7571b091f84",

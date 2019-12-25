@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/uber-giphy/static/css/main.bbd10ab7.chunk.css",
-    "main.js": "/uber-giphy/static/js/main.9b7b6ae9.chunk.js",
-    "main.js.map": "/uber-giphy/static/js/main.9b7b6ae9.chunk.js.map",
+    "main.css": "/uber-giphy/static/css/main.c952f24e.chunk.css",
+    "main.js": "/uber-giphy/static/js/main.a7765d22.chunk.js",
+    "main.js.map": "/uber-giphy/static/js/main.a7765d22.chunk.js.map",
     "runtime-main.js": "/uber-giphy/static/js/runtime-main.d07d763b.js",
     "runtime-main.js.map": "/uber-giphy/static/js/runtime-main.d07d763b.js.map",
     "static/js/2.1a876ad3.chunk.js": "/uber-giphy/static/js/2.1a876ad3.chunk.js",
     "static/js/2.1a876ad3.chunk.js.map": "/uber-giphy/static/js/2.1a876ad3.chunk.js.map",
     "index.html": "/uber-giphy/index.html",
-    "precache-manifest.6c8c60ce062464e00c49283d271c0acf.js": "/uber-giphy/precache-manifest.6c8c60ce062464e00c49283d271c0acf.js",
+    "precache-manifest.b92415b1195bcf8b11c1c899450c5785.js": "/uber-giphy/precache-manifest.b92415b1195bcf8b11c1c899450c5785.js",
     "service-worker.js": "/uber-giphy/service-worker.js",
-    "static/css/main.bbd10ab7.chunk.css.map": "/uber-giphy/static/css/main.bbd10ab7.chunk.css.map",
+    "static/css/main.c952f24e.chunk.css.map": "/uber-giphy/static/css/main.c952f24e.chunk.css.map",
     "static/js/2.1a876ad3.chunk.js.LICENSE": "/uber-giphy/static/js/2.1a876ad3.chunk.js.LICENSE",
     "static/media/logo.svg": "/uber-giphy/static/media/logo.04e09dee.svg",
     "static/media/single-column.svg": "/uber-giphy/static/media/single-column.e7d93e18.svg",
@@ -19,7 +19,7 @@
   "entrypoints": [
     "static/js/runtime-main.d07d763b.js",
     "static/js/2.1a876ad3.chunk.js",
-    "static/css/main.bbd10ab7.chunk.css",
-    "static/js/main.9b7b6ae9.chunk.js"
+    "static/css/main.c952f24e.chunk.css",
+    "static/js/main.a7765d22.chunk.js"
   ]
 }
