@@ -1,7 +1,7 @@
 # Uber-Giphy
 A simple responsive Giphy interface for fun. Real-time infinite scroll with single/3-column layout.
 
-![alt text](https://raw.githubusercontent.com/kavare/uber-giphy/src/config/demo.png)
+![Demo](https://github.com/kavare/uber-giphy/blob/master/src/config/demo.png)
 
 ## Project Setup
 *`yarn start`*
