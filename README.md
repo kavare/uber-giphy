@@ -26,6 +26,9 @@ The working app is running under https://kavare.github.io/uber-giphy/.
 - Support endless scrolling, automatically requesting and displaying more images when the user scrolls to the bottom of the view.
 - Users could enter arbitrary words to get the images from Giphy (default to G rating).
 - Users could toggle between 1-column and 3-column views.
+- Showing the top loading bar at the top for better mobile experience
+- User will be notify when lose internet connection
+- User can click on brand logo to "go back to home" (aka initial state)
 
 ## Architecture
 For simplicity, this project use React Hook to handle state management for the whole app. I choose Hook over Redux due to its simple use case with limited states (show below). The entry point is `index.js` under the `src` folder. `App.js` serves as the root container components which holding the states and actions logic such as search, loading state, and column rearrangement. The rest of the UI components (stateless dump components) are listed under the `components` folder.

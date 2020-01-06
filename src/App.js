@@ -44,6 +44,14 @@ function App() {
     setTimeout(() => setIsPristine(false), 1000);
   }
 
+  const updateColumn = param => e => {
+    // [NOTE] UX Improvement: fix the "jumpy" issue when transition to 3-column
+    //        mode. Force the screen to move to the top to prevent the scrollbar
+    //        remain at the bottom after (n mod 3).
+    window.scrollTo(0, 0);
+    setColumns(param);
+  }
+
   const backToHome = (e) => {
     setKeywords('');
     setIsPristine(true);
@@ -72,7 +80,7 @@ function App() {
             `}
             img={iconSingleColumn}
             text="Single Column Layout"
-            onClick={() => setColumns(1)}
+            onClick={updateColumn(1)}
           />
           <IconButton
             className={`
@@ -81,7 +89,7 @@ function App() {
             `}
             img={iconThreeColumns}
             text="Three Columns Layout"
-            onClick={() => setColumns(3)}
+            onClick={updateColumn(3)}
           />
         </div>
       </NavBar>
