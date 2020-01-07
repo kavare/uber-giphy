@@ -5,7 +5,7 @@ const useInfiniteScroll = (fetchData) => {
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [query, setQuery] = useState('');
-  const [pagination, setPagination] = useState({count: 0, total: 0, offset: 0});
+  const [pagination, setPagination] = useState({count: 0, total_count: 0, offset: 0});
   const [results, setResults] = useState([]);
 
   const loadMore = useCallback(() => {
@@ -25,7 +25,7 @@ const useInfiniteScroll = (fetchData) => {
   useEffect(() => {
     // [NOTE] Prevent request in initial state or reset to empty string
     let shouldLoad = !!query.length;
-    setPagination({count: 0, total: 0, offset: 0});
+    setPagination({count: 0, total_count: 0, offset: 0});
     setResults([]);
     setIsLoading(shouldLoad);
   }, [query])
@@ -33,6 +33,11 @@ const useInfiniteScroll = (fetchData) => {
 
   useEffect(() => {
     if (!isLoading) return;
+    if (results.length !== 0 && pagination.total_count === results.length) {
+      setIsLoading(false);
+      return;
+    }
+
     loadMore()
       .then(({data, pagination}) => {
         if (!Array.isArray(data)) data = [];
@@ -42,7 +47,7 @@ const useInfiniteScroll = (fetchData) => {
         setHasError(false);
       })
       .catch(err => {
-        setPagination({count: 0, total: 0, offset: 0});
+        setPagination({count: 0, total_count: 0, offset: 0});
         setResults([]);
         setIsLoading(false);
         setHasError(true);

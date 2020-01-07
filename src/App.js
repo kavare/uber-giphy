@@ -30,18 +30,17 @@ function App() {
   const [columns, setColumns] = useState(1);
 
   useEffect(() => {
-    if (debouncedKeywords === undefined) return;
+    if (debouncedKeywords === undefined
+      || debouncedKeywords.length === 0) return;
     search(debouncedKeywords);
+    setIsPristine(false);
   }, [debouncedKeywords, search]);
 
 
   const updateKeywords = (e) => {
     let keywords = e.target.value;
     setKeywords(keywords);
-
-    // [NOTE] UX Improvement: prevent flashing no results screen when users start
-    //        searching from initial state
-    setTimeout(() => setIsPristine(false), 1000);
+    if (keywords.length === 0) setIsPristine(true);
   }
 
   const updateColumn = param => e => {
